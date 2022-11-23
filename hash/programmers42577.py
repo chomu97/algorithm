@@ -5,6 +5,18 @@ def solution(phone_book):
             return False
     return True
 
-print(solution(["119", "97674223", "1195524421"]))
-print(solution(["123","456","789"]))
-print(solution(["12","123","1235","567","88"]))
+def solution_hash(phone_book):
+    phone_dict = {}
+    for phone in phone_book:
+        phone_dict[phone] = 1
+    for phone in phone_book:
+        tmp = ""
+        for i in phone:
+            tmp += i
+            if tmp in phone_dict and tmp != phone:
+                return False
+    return True
+
+print(solution_hash(["119", "97674223", "1195524421"]))
+print(solution_hash(["123","456","789"]))
+print(solution_hash(["12","123","1235","567","88"]))
