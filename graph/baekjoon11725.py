@@ -27,3 +27,5 @@ for i in range(2,n+1):
 # range(2,N+1) 까지 값을 찾는데
 # 딕셔너리의 key들을 순회하면서 value에 있는지만 확인하면 그 key가 부모가된다.
 
+# discovered 할 때 if v in discovered 가 아니라 -> if not discovered[v] 이런 식으로 O(1)에 가져올 수 있도록 변경.
+# if v in discovered 는 최악의 경우 O(n)이 걸릴 수 있다.
