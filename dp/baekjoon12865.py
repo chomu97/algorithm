@@ -11,5 +11,7 @@ for i in range(1,N+1):
         if j < weight:
             knapsack[i][j] = knapsack[i-1][j]
         else:
+            # knapsack[i][j] = max( 바로 전의 가치, 바로 전에서 지금 무게의 물건을 넣었을 때 가치 )
             knapsack[i][j] = max(knapsack[i-1][j-weight] + value, knapsack[i-1][j])
+print(knapsack)
 print(knapsack[-1][-1])
